@@ -78,7 +78,7 @@ public abstract class Activo {
 
     
     
-    private void mostrarInformacion(){
+    public void mostrarInformacion(){
         System.out.println("Código: " + codigo);
         System.out.println("Nombre: " + nombre);
         System.out.println("Marca: " + marca);

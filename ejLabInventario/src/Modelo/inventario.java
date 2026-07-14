@@ -17,23 +17,46 @@ public class inventario {
         this.Activos = Activos;
     }
     
-    private void agragaActivo(){
-        
+    public void agragaActivo(Activo nuevo){
+        Activos.add(nuevo);
     }
-    private void eliminarActivo(){
-        
+    public void eliminarActivo(Activo actual){
+        Activos.remove(actual);
     }
-    private void buscarActivo(){
-        
+    public Activo buscarActivo(String codigo){
+
+        for(Activo activo : Activos){
+
+            if(activo.getCodigo().equals(codigo)){
+                return activo;
+            }
+
+        }
+
+        return null;
+    }        
+    
+    public void modificarActivo(String codigo, String nuevoEstado){
+        Activo activo = buscarActivo(codigo);
+
+        if(activo != null){
+
+            activo.setEstado(nuevoEstado);
+            
+
+        }
     }
-    private void modificarActivo(){
-        
+    public void listarActivos(){
+        for(Activo activo: Activos){
+            activo.mostrarInformacion();
+        }
     }
-    private void listarActivos(){
-        
-    }
-    private void aclcularCostoTotal(){
-        
+    public double calcularCostoTotal(){
+        double total=0;
+        for(Activo activo: Activos){
+            total+= activo.calcularCostoMantenimiento();
+        }
+        return total;
     }
     
 }
