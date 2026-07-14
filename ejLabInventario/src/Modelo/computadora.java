@@ -39,6 +39,6 @@ public class computadora extends Activo{
     
     @Override
     public double calcularCostoMantenimiento() {
-        return 0;
+        return valorCompra * 0.08;
     }
 }

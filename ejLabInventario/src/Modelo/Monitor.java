@@ -30,6 +30,6 @@ public class Monitor extends Activo {
     
     @Override
     public double calcularCostoMantenimiento() {
-        return 0;
+        return valorCompra * 0.05;
     }
 }
