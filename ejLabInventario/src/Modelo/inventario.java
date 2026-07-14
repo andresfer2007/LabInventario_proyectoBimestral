@@ -17,15 +17,15 @@ public class inventario {
         this.Activos = Activos;
     }
     
-    public void agragaActivo(Activo nuevo){//tipo un activo
-        Activos.add(nuevo);//agrega el activo
+    public void agragaActivo(Activo nuevo){
+        Activos.add(nuevo);
     }
     public void eliminarActivo(Activo actual){
         Activos.remove(actual);
-        
     }
     public Activo buscarActivo(String codigo){
-        for(Activo activo : Activos){//recorre lista hasta el final
+
+        for(Activo activo : Activos){
 
             if(activo.getCodigo().equals(codigo)){
                 return activo;
@@ -34,7 +34,7 @@ public class inventario {
         }
 
         return null;
-    }
+    }        
     
     public void modificarActivo(String codigo, String nuevoEstado){
         Activo activo = buscarActivo(codigo);
@@ -42,20 +42,19 @@ public class inventario {
         if(activo != null){
 
             activo.setEstado(nuevoEstado);
+            
 
         }
-
     }
     public void listarActivos(){
-        for(Activo activo : Activos){
+        for(Activo activo: Activos){
             activo.mostrarInformacion();
-            System.out.println("");
         }
     }
     public double calcularCostoTotal(){
-        double total =0;
-        for(Activo activo : Activos){//recorre la lista
-            total += activo.calcularCostoMantenimiento();//llama cada funcion con polimorfismo
+        double total=0;
+        for(Activo activo: Activos){
+            total+= activo.calcularCostoMantenimiento();
         }
         return total;
     }
