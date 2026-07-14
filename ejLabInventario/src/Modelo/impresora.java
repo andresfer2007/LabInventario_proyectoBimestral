@@ -29,8 +29,10 @@ public class impresora extends Activo{
 
     @Override
     public double calcularCostoMantenimiento() {
-        return 0;
+        double costoBase = 25;
+        double costoCartuchos = numCartuchos * 10;
+        return costoBase + costoCartuchos;
     }
     
-    
+
 }

@@ -39,6 +39,7 @@ public class LicenciaSoftware extends Activo{
     
     @Override
     public double calcularCostoMantenimiento() {
-        return 0;
+        double renovacion = 50;
+        return renovacion *  numLicencias;
     }
 }
